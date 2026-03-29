@@ -1,6 +1,8 @@
-import { SplitText } from "gsap-trial/SplitText";
+import SplitText from "gsap-trial/SplitText";
 import gsap from "gsap";
 import { smoother } from "../Navbar";
+
+gsap.registerPlugin(SplitText); // ✅ ADD THIS LINE
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
@@ -80,7 +82,7 @@ export function initialFX() {
   LoopText(landingText4, landingText5);
 }
 
-function LoopText(Text1: SplitText, Text2: SplitText) {
+function LoopText(Text1: any, Text2: any) {
   var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
   const delay = 4;
   const delay2 = delay * 2 + 1;
